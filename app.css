@@ -7,7 +7,7 @@ body {
 
 .container {
     width: 400px;
-    height: 580px;
+    height: 590px;
     display: block;
     border: 2px solid black;
     margin: 0 auto;
@@ -80,8 +80,13 @@ body {
 }
 
 #delete:hover {
-    background-color: red;
+    background-color: #ffb703;
 }
+
+#clear:hover {
+    background-color: #d00000;
+}
+
 
 .opBtn:hover {
     background-color: #0096c7;
@@ -113,4 +118,33 @@ body {
     margin: 0 auto;
     justify-content: center;
     align-items: flex-end;
+}
+
+
+
+
+/* FOOTER */
+
+.footer {
+    position: absolute;
+    /* bottom: 0;
+    left: 0; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.fa-github {
+    color: #212529;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
 }

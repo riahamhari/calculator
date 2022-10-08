@@ -30,6 +30,7 @@ equalsBtn.addEventListener('click', evaluate)
 clearBtn.addEventListener('click', clear)
 deleteBtn.addEventListener('click', deleteNum)
 decimalBtn.addEventListener('click', () => appendDecimal(decimalBtn.textContent))
+window.addEventListener('keydown', keyboardEvents)
 
 
 // functions
@@ -94,6 +95,18 @@ function evaluate() {
 
 function roundResult(number) {
     return Math.round(number * 1000) / 1000
+}
+
+function keyboardEvents(e) {
+    if (isFinite(e.key)) appendNumber(`${e.key}`)
+    if (e.key === '+') setOperation(e.key)
+    if (e.key === '/') setOperation('÷')
+    if (e.key === '*') setOperation('x')
+    if (e.key === '-') setOperation(e.key)
+    if (e.key === '=' || e.key === 'Enter') evaluate()
+    if (e.key === 'k' || e.key === 'K') clear()
+    if (e.key === 'Backspace') deleteNum()
+
 }
 
 
