@@ -11,27 +11,25 @@ const numbers = document.querySelectorAll('.numBtn')
 const clearBtn = document.querySelector('#clear');
 const deleteBtn = document.querySelector('#delete');
 
-// operators
+// Operators
 const operators = document.querySelectorAll('.opBtn')
-
 const equalsBtn = document.querySelector('#equals')
 
+// Calculator Screen
 const currentSel = document.querySelector('#currentSel')
 const lastSel = document.querySelector('#lastSel')
 
+// decimal
+const decimalBtn = document.querySelector('#decimal')
+
 // event listeners
 
-numbers.forEach((button) =>
-    button.addEventListener('click', () => appendNumber(button.textContent))
-)
-
-
-operators.forEach((button) =>
-    button.addEventListener('click', () => setOperation(button.textContent))
-)
+numbers.forEach((button) => button.addEventListener('click', () => appendNumber(button.textContent)))
+operators.forEach((button) => button.addEventListener('click', () => setOperation(button.textContent)))
 equalsBtn.addEventListener('click', evaluate)
 clearBtn.addEventListener('click', clear)
 deleteBtn.addEventListener('click', deleteNum)
+decimalBtn.addEventListener('click', () => appendDecimal(decimalBtn.textContent))
 
 
 // functions
@@ -69,9 +67,13 @@ function setOperation(operator) {
     firstNum = currentSel.textContent
     currentOperation = operator
     lastSel.textContent = `${firstNum}${operator}`
-
     shouldResetScreen = true
 
+}
+
+function appendDecimal(dec) {
+    if (currentSel.textContent.indexOf('.') > -1) return
+    currentSel.textContent += dec;
 }
 
 function evaluate() {

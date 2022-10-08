@@ -83,6 +83,14 @@ body {
     background-color: red;
 }
 
+.opBtn:hover {
+    background-color: #0096c7;
+}
+
+#equals:hover {
+    background-color: #0096c7;
+}
+
 .numBtn, .opBtn {
     width: 70px;
     height: 70px;
@@ -92,7 +100,7 @@ body {
     /* margin-right: -2px; */
 }
 
-#equals {
+#equals, #decimal {
     width: 70px;
     height: 70px;
     margin: 8px 8px 10px 10px;
